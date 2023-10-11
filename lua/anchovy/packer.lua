@@ -8,18 +8,11 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+	  'nvim-telescope/telescope.nvim', tag = '0.1.4',
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use({
-	  'rose-pine/neovim',
-	  as = 'rose-pine',
-	  config = function()
-		  vim.cmd('colorscheme rose-pine')
-	  end
-  })
  use({
     "folke/trouble.nvim",
     config = function ()
@@ -33,13 +26,13 @@ return require('packer').startup(function(use)
  })
   use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"})
   use("nvim-treesitter/playground")
+  use ("Shatur/neovim-ayu")
   use("theprimeagen/harpoon")
   use("theprimeagen/refactoring.nvim")
   use("mbbill/undotree")
   use("tpope/vim-fugitive")
   use("nvim-treesitter/nvim-treesitter-context");
 
-  use {'neoclide/coc.nvim', branch = 'release'}
   use ("lewis6991/gitsigns.nvim")
 
     use ("mfussenegger/nvim-dap")
@@ -72,11 +65,12 @@ use {
   use("folke/zen-mode.nvim")
   use("folke/tokyonight.nvim")
 
+  use { "catppuccin/nvim", as = "catppuccin" }
   use("github/copilot.vim")
   use("eandrju/cellular-automaton.nvim")
   use("laytan/cloak.nvim")
 use 'ray-x/go.nvim'
 use 'ray-x/guihua.lua' -- recommended if need floating window support
 use 'neovim/nvim-lspconfig'
-use 'ghifarit53/tokyonight-via'
+use 'mfussenegger/nvim-dap'
 end)
