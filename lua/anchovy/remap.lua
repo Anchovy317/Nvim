@@ -32,25 +32,27 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
-vim.keymap.set("n", "<TAB>", vim.cmd.bnext)
-vim.keymap.set("n", "<C-s>","<cmd>w!<CR>zz")
-vim.keymap.set("n", "<C-t>","<cmd>:ToggleTerm<CR>")
+vim.keymap.set("n", "<C-s>", "<cmd>w!<CR>zz")
 vim.keymap.set("n", "<M-j>", " :resize -2<CR>")
 vim.keymap.set("n", "<M-k>", " :resize +2<CR>")
 vim.keymap.set("n", "<M-h>", " :vertical resize -2<CR>")
 vim.keymap.set("n", "<M-l>", " :vertical resize +2<CR>")
 --Telescope
-vim.keymap.set("n", "<leader>ff",":Telescope find_files<CR>")
+vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+vim.keymap.set("n", "<leader>vo", "<cmd>:Telescope oldfiles<CR>")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
+vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/anchovy/packer.lua <CR>");
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
+vim.keymap.set("n", "<leader>vs", "<cmd>:vs <CR>");
+vim.keymap.set("n", "<leader>sp", "<cmd>:sp <CR>");
+vim.keymap.set("n", "<leader>q", "<cmd>:q <CR>");
 
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
