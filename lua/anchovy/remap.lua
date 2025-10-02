@@ -32,20 +32,21 @@ vim.keymap.set("n", "<M-k>", " :resize +2<CR>")
 vim.keymap.set("n", "<M-h>", " :vertical resize -2<CR>")
 vim.keymap.set("n", "<M-l>", " :vertical resize +2<CR>")
 --Telescope
-vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
-vim.keymap.set("n", "<leader>vo", "<cmd>:Telescope oldfiles<CR>")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/anchovy/packer.lua <CR>");
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
-vim.keymap.set("n", "<leader>vs", "<cmd>:vs <CR>");
-vim.keymap.set("n", "<leader>sp", "<cmd>:sp <CR>");
+
+vim.keymap.set('n', '<leader>ff', '<cmd>Files<CR>', { desc = 'Find files' })
+vim.keymap.set('n', '<leader>fb', '<cmd>Buffers<CR>', { desc = 'Find buffers' })
+vim.keymap.set('n', '<leader>fr', '<cmd>History<CR>', { desc = 'Recent files' })
+vim.keymap.set('n', '<leader>fl', '<cmd>Lines<CR>', { desc = 'Lines in buffer' })
 
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")

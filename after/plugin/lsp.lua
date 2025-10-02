@@ -16,26 +16,21 @@ require('mason-lspconfig').setup({
         'phpactor',
         'pyright',
         'marksman',
+        'solargraph',
+        'cssls',
+        'denols',
+        'emmet_ls',
+        'jsonls',
+        'rust_analyzer',
+        'gopls',
+        'codebook',
+        'texlab',
 
 
     },
     handlers = {
         lsp_zero.default_setup,
     },
-})
-require('lspconfig').marksman.setup({})
--- nvim-cmp configuración
-local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
-
-cmp.setup({
-    mapping = cmp.mapping.preset.insert({
-        ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-        ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-        ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    })
 })
 
 -- Opcional: preferencias visuales

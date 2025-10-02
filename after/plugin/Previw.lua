@@ -43,7 +43,8 @@ vim.g.mkdp_preview_options = {
 vim.g.mkdp_markdown_css = vim.fn.expand("~/.config/mark-cust/custom.css")
 
 -- Usar un CSS personalizado para resaltar código en bloques (opcional)
-vim.g.mkdp_highlight_css = ''
+vim.g.mkdp_highlight_css = vim.fn.expand("~/.config/mark-cust/custom.css")
+
 
 -- Especificar un puerto fijo para el servidor (vacío para asignar aleatorio)
 vim.g.mkdp_port = ''

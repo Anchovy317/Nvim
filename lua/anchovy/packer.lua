@@ -30,12 +30,16 @@ return require('packer').startup(function(use)
     use("craftzdog/solarized-osaka.nvim")
     use("mbbill/undotree")
     use("iruzo/matrix-nvim")
+    use("olimorris/onedarkpro.nvim")
     use("tpope/vim-fugitive")
     use("bluz71/vim-moonfly-colors")
     use("tiagovla/tokyodark.nvim")
+    use("ribru17/bamboo.nvim")
+    use("junegunn/fzf.vim")
+    use("lervag/vimtex")
     use("rose-pine/neovim")
     use("iamcco/markdown-preview.nvim")
-    use("lewis6991/gitsigns.nvim")
+    use {'shellRaining/hlchunk.nvim'}
         use {
             'VonHeikemen/lsp-zero.nvim',
             branch = 'v3.x',
@@ -87,5 +91,27 @@ return require('packer').startup(function(use)
      end
     }
 
+    use({
+      "epwalsh/obsidian.nvim",
+      tag = "*",  -- recommended, use latest release instead of latest commit
+      requires = {
+        -- Required.
+        "nvim-lua/plenary.nvim",
+
+        -- see below for full list of optional dependencies 👇
+      },
+      config = function()
+        require("obsidian").setup({
+          workspaces = {
+            {
+              name = "Personal",
+              path = "~/Obsidian/HTB/",
+            }
+          },
+
+          -- see below for full list of options 👇
+        })
+      end,
+    })
 
     end)
