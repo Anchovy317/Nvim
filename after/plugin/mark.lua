@@ -12,6 +12,7 @@ local colors = {
 }
 
 require('render-markdown').setup({
+    css = vim.fn.expand('~/.config/mark-cust/custom.css'),
     completions = { lsp = { enabled = true } },
     indent = {
         enabled = true,
@@ -37,7 +38,7 @@ require('render-markdown').setup({
 
     callout = {
         note      = { raw = '[!NOTE]',      rendered = '󰎚  Note',      highlight = 'RenderMarkdownInfo',    category = 'github'   },
-        tip       = { raw = '[!TIP]',       rendered = '  Tip',       highlight = 'RenderMarkdownSuccess', category = 'github'   },
+        tip       = { raw = '[!TIP]',       rendered = 'Tip',       highlight = 'RenderMarkdownSuccess', category = 'github'   },
         important = { raw = '[!IMPORTANT]', rendered = ' Important', highlight = 'RenderMarkdownHint',    category = 'github'   },
         warning   = { raw = '[!WARNING]',   rendered = '  Warning',   highlight = 'RenderMarkdownWarn',    category = 'github'   },
         caution   = { raw = '[!CAUTION]',   rendered = ' Caution',   highlight = 'RenderMarkdownError',   category = 'github'   },
@@ -94,3 +95,27 @@ gm(0, 'RenderMarkdownWikiLink', { fg = colors.purple, underline = true })
 
 gm(0, 'RenderMarkdownSign',   { fg = colors.gray_medium, bg = colors.black })
 gm(0, 'RenderMarkdownIndent', { fg = colors.gray_medium })
+
+
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+
+local markdown_shortcuts_group = augroup('RenderMarkdownShortcuts', {})
+
+autocmd('FileType', {
+    group = markdown_shortcuts_group,
+    pattern = 'markdown',
+    callback = function()
+        vim.cmd [[iabbrev <buffer> bold ****<Left><Left>]]
+        vim.cmd [[iabbrev <buffer> italic **<Left>]]
+        vim.cmd [[iabbrev <buffer> note <blockquote class="note"></blockquote><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>]]
+        vim.cmd [[iabbrev <buffer> tip  <blockquote class="tip"></blockquote><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>]]
+        vim.cmd [[iabbrev <buffer> warning <blockquote class="warning"></blockquote><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>]]
+        vim.cmd [[iabbrev <buffer> info <blockquote class="info"></blockquote><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>]]
+        vim.cmd [[iabbrev <buffer> important <blockquote class="important"></blockquote><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>]]
+        vim.cmd [[iabbrev <buffer> summary <blockquote class="summary"></blockquote><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>]]
+        vim.cmd [[iabbrev <buffer> question <blockquote class="question"></blockquote><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>]]
+    end,
+})
+
+

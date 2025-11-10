@@ -25,6 +25,7 @@ require('mason-lspconfig').setup({
         'gopls',
         'codebook',
         'texlab',
+        'csharp_ls',
 
 
     },
