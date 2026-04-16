@@ -1,6 +1,9 @@
 -- Configuración principal de Telescope
 require('telescope').setup({
   defaults = {
+      preview = {
+        treesitter = false,
+    },
     -- Configuración de mapeos para modo insert
     mappings = {
       i = {

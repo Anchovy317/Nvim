@@ -22,13 +22,13 @@ vim.g.mkdp_preview_options = {
     flowchart_diagrams = {},
     content_editable = false,
     disable_filename = 0,
-    toc = {}
+    toc = false
 }
 
 vim.g.mkdp_markdown_css = vim.fn.expand("~/.config/mark-cust/custom.css")
 vim.g.mkdp_highlight_css = vim.fn.expand("~/.config/mark-cust/custom.css")
 vim.g.mkdp_port = '3333'
-
+vim.g.mkdp_disable_sync_content = 1
 
 vim.api.nvim_set_keymap('n', '<Leader>mm', ':MarkdownPreview<CR>', { noremap = true, silent = true })
 

@@ -114,7 +114,7 @@ autocmd('FileType', {
         vim.cmd [[iabbrev <buffer> info <blockquote class="info"></blockquote><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>]]
         vim.cmd [[iabbrev <buffer> important <blockquote class="important"></blockquote><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>]]
         vim.cmd [[iabbrev <buffer> summary <blockquote class="summary"></blockquote><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>]]
-        vim.cmd [[iabbrev <buffer> question <blockquote class="question"></blockquote><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>]]
+        vim.cmd [[iabbrev <buffer> summary <blockquote class="summary"></blockquote><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>]]
     end,
 })
 
