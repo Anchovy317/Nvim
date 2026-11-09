@@ -12,7 +12,6 @@ local colors = {
 }
 
 require('render-markdown').setup({
-    css = vim.fn.expand('~/.config/mark-cust/custom.css'),
     completions = { lsp = { enabled = true } },
     indent = {
         enabled = true,

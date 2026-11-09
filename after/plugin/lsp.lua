@@ -7,27 +7,23 @@ require('mason-lspconfig').setup({
         'bashls', 'clangd', 'html', 'lua_ls', 'jedi_language_server',
         'phpactor', 'pyright', 'marksman', 'solargraph', 'cssls',
         'denols', 'emmet_ls', 'jsonls', 'rust_analyzer', 'gopls',
-        'codebook', 'texlab', 'csharp_ls', 'asm_lsp',
-        -- 'stylua'  -- si usas conform.nvim o null-ls para formateo, NO lo instales como LSP
+        'codebook', 'texlab', 'csharp_ls', 'asm_lsp', 'jdtls',
     },
     handlers = {
         lsp_zero.default_setup,
 
+        jdtls = function()
+        end,
+
         clangd = function()
             require('lspconfig').clangd.setup({
-                -- Esto ayuda a clangd a encontrar paths del sistema (gtkmm, etc.)
                 cmd = {
                     "clangd",
                     "--background-index",
                     "--clang-tidy",
                     "--header-insertion=iwyu",
                     "--completion-style=detailed",
-                    "--query-driver=/usr/bin/g++",  -- o /usr/bin/clang++ si prefieres
-                    -- Si sigues teniendo problemas con gtkmm, añade manualmente algunos -I comunes
-                    -- "-I/usr/include/gtkmm-4.0",
-                    -- "-I/usr/lib/x86_64-linux-gnu/gtkmm-4.0/include",
-                    -- etc. (pero mejor usa .clangd abajo)
-                },
+                    "--query-driver=/usr/bin/g++",                                     },
             })
         end,
 
